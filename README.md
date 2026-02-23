@@ -25,15 +25,22 @@ Entry point of the project. Runs the full workflow including data loading, pipel
 - **requirements.txt**  
 Lists required Python dependencies.
 
-
-大家好，我叫Alice
-来自BUAA
-我很高兴认识你们！
-
-
 ## Quick Start
 ### Installation
 ```python  
 pip install -r requirements.txt  
 ```
+
+### Usage
+Run the main script:
+```Bash  
+python main.py 
+```
+You may modify configuration settings inside main.py or relevant modules depending on your experimental setup.
+
+### Configuration
+If you are using external LLM APIs (e.g., OpenAI or other providers), make sure to:
+- Set your API key as an environment variable
+- Or configure it directly inside llm_services.py if needed.
+
 
