@@ -25,42 +25,6 @@ def get_openai_completion(prompt, model_name):
         print(f"Error calling OpenAI API for model {model_name}: {e}")
         return "Error: Could not get response from OpenAI."
 
-# def get_hf_completion(prompt, model_name):
-#     """
-#     Gets a completion from a Hugging Face Serverless Inference API model.
-#     Handles potential API errors and timeouts.
-#     """
-#     api_url = f"https://router.huggingface.co/models/{model_name}"
-#     headers = {"Authorization": f"Bearer {Config.HUGGINGFACE_TOKEN}"}
-    
-#     payload = {
-#         "inputs": prompt,
-#         "parameters": {
-#             "max_new_tokens": Config.LLM_MAX_TOKENS,
-#             "temperature": Config.LLM_TEMPERATURE if Config.LLM_TEMPERATURE > 0 else 0.01, # Temp 0 is not always supported
-#             "return_full_text": False
-#         }
-#     }
-    
-#     try:
-#         response = requests.post(api_url, headers=headers, json=payload, timeout=180) # Increased timeout
-#         response.raise_for_status()
-#         # The response is typically a list with a dictionary
-#         generated_text = response.json()[0]['generated_text']
-#         return generated_text.strip()
-#     except requests.exceptions.RequestException as e:
-#         print(f"Error calling HF Inference API for model {model_name}: {e}")
-#         return f"Error: API request failed for {model_name}."
-#     except (KeyError, IndexError) as e:
-#         print(f"Error processing response from HF model {model_name}: Unexpected format. {e}")
-#         print(f"Full response: {response.text}")
-#         return f"Error: Could not parse response from {model_name}."
-#     except Exception as e:
-#         print(f"An unexpected error occurred with HF model {model_name}: {e}")
-#         return f"Error: An unexpected error occurred with {model_name}."
-
-
-
 def get_hf_completion(prompt, model_name):
     """
     Gets a completion from Hugging Face via the Router (OpenAI-compatible API).
