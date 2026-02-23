@@ -6,10 +6,34 @@ This repository contains the implementation of a Retrieval-Augmented Generation 
 ## RCxRAG Overview 
 <img width="450" height="761" alt="d6577b97-02d9-4d09-b470-a7a003409d01" src="https://github.com/user-attachments/assets/bb96b3de-d8bb-4ce1-88c3-84ca5fd91152" />
 
+### File Descriptions
+- **data_loader.py**    
+  Handles data preprocessing, document loading, and dataset preparation for retrieval and evaluation.
+
+- **pipelines.py**  
+Implements the RAG pipeline, including retrieval, optional re-ranking, and response generation logic.
+
+- **llm_services.py**  
+Provides interfaces for interacting with large language models (LLMs), such as API calls, prompt handling, and response processing.
+
+- **evaluation.py**  
+Contains evaluation metrics and performance analysis functions for assessing retrieval and generation quality.
+
+- **main.py**  
+Entry point of the project. Runs the full workflow including data loading, pipeline execution, and evaluation.
+
+- **requirements.txt**  
+Lists required Python dependencies.
+
+
+大家好，我叫Alice
+来自BUAA
+我很高兴认识你们！
+
+
 ## Quick Start
 ### Installation
 ```python  
 pip install -r requirements.txt  
 ```
-
 
